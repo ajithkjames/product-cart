@@ -2,7 +2,8 @@ import * as React from 'react';
 import {
   Routes,
   Route,
-  Link
+  Link,
+  Navigate
 } from "react-router-dom";
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -153,6 +154,7 @@ function DashboardContent() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Routes>
+                      <Route path="/" element={<Navigate replace to="/products" />} />
                       <Route path="products" element={<ProductsContainer />} />
                       <Route path="cart" element={<CartContainer />} />
                   </Routes>
